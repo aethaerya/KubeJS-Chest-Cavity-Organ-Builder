@@ -41,8 +41,34 @@ onEvent('server.datapack.high_priority', event => {
     //Register your organs here!
     //Refer to https://github.com/Tigereye504/chestcavity/blob/master/src/main/java/net/tigereye/chestcavity/registration/CCOrganScores.java
     //for valid Organ Scores
-    //
+
+    //if mod id is not present for the item, it defaults to kubejscavity
+    //if mod id is not present for the organ stats, it defaults to chestcavity
+
+    // registerOrgan([new Organ...]) : you need to put your organ stat inside here to make custom organ stats register.
+    // new Organ([item id]) : this is how you make an organ stat for certain item.
+    // .addScore([organ score id],[intager]) : this is how you can add an organ stat for the item. 
+    // .pesudo() : this dictates if the organ is pesudo, and makes that organ stats does not show up in the tooltip.
+    // .build() : you need to put this in the end to finish organ stat making.
+    
+    /*
+    Example for minecraft:beetroot :
+    registerOrgan(new Organ('minecraft:beetroot').addScore('health', 10).addScore('speed', 10).build()) 
+
+    Pesudo organ example for kubejscavity:someorgan :
+    registerOrgan(new Organ('someorgan').addScore('health', 2).addScore('speed', 20).pseudo().build()) 
+    
+    Can also build it like this :
+    registerOrgan(new Organ('minecraft:reetboot')
+        .addScore('health', 10)
+        .addScore('speed', 10)
+        .build()
+    )
+    */
+    
     //After finishing the script, you can reload the organ stats in-game using /reload command!
+    
+
     /* 
         Explanation of chest cavity stats
 
