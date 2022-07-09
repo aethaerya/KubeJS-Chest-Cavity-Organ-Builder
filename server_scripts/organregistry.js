@@ -161,7 +161,6 @@ onEvent('server.datapack.high_priority', event => {
     registerOrgan(new Organ('golden_wiring').addScore('nerves',2).build())
     registerOrgan(new Organ('hasty_muscle').addScore('speed',1.25).addScore('strength',0.25).addScore('nerves',0.5).build())
     registerOrgan(new Organ('heart_of_gold').addScore('health',0.5).addScore('luck',0.5).addScore('defense',0.5).addScore('strength',-1).build())
-    registerOrgan(new Organ('heart_of_gold').addScore('health',0.5).addScore('luck',0.5).addScore('defense',0.5).addScore('strength',-1).build())
     registerOrgan(new Organ('iron_lung').addScore('breath_recovery',0.75).addScore('breath_capacity',0.75).addScore('endurance',1.25).build())
     registerOrgan(new Organ('jump_shaft').addScore('speed',1.25).addScore('strength',0.25).addScore('impact_resistant',0.75).addScore('leaping',0.5).build())
     registerOrgan(new Organ('phantom_pump').addScore('buoyant',0.5).addScore('breath_recovery',0.75).addScore('breath_capacity',0.75).addScore('endurance',0.75).build())
