@@ -18,7 +18,7 @@ onEvent('item.registry', event => {
     
     //thank you for A5TR0spud for allowing me to use his mod's spritework for these examplary organs! 
     //check out his mod and its github: https://www.curseforge.com/minecraft/mc-mods/ccastroadds https://github.com/A5TR0spud/chest-cavity-astro-adds
-    //createOrgan('clockwork_heart',1)
+    
     createOrgan('creative_soul')
     createOrgan('actuator',16)
     createOrgan('copper_wiring',4)

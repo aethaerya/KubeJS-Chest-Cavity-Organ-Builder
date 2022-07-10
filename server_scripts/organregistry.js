@@ -44,6 +44,9 @@ onEvent('server.datapack.high_priority', event => {
 
     //For explanations on certain things, please check out organregistry_readme.md
 
+    //thank you for A5TR0spud for allowing me to use his mod's spritework for these examplary organs! 
+    //check out his mod and its github: https://www.curseforge.com/minecraft/mc-mods/ccastroadds https://github.com/A5TR0spud/chest-cavity-astro-adds
+
     registerOrgan(new Organ('creative_soul')
         .addScore('filtration',2)
         .addScore('breath_recovery',2)
