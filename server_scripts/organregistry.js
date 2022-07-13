@@ -7,13 +7,10 @@ function Organ(itemID) {
 
 Organ.prototype = {
     addScore: function(score, value) {
-        if(score.indexOf('\:') != -1){
-            this.organScores.push({'id': score, 'value': value});
-        }
+        if(score.indexOf('\:') != -1)
+            this.organScores.push({'id': score, 'value': value})
         else
-        {
-            this.organScores.push({'id': `chestcavity:${score}`, 'value': value});
-        }
+            this.organScores.push({'id': `chestcavity:${score}`, 'value': value})
         return this;
     },
 
