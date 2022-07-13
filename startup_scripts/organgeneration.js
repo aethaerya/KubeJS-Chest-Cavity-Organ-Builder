@@ -1,13 +1,21 @@
 onEvent('item.registry', event => {
-    function createOrgan(organID,StackSize){
+    function createOrgan(organID,StackSize,organName){
         //StackSize ?? 1
-        if(organID.indexOf('\:') != -1)
-        {   
-            event.create(organID).maxStackSize(StackSize == null ? 1 : StackSize).group('chestcavity:organs')
+        if(StackSite == null) 
+            StackSize = 1
+        if(organName == null)
+        {
+            if(organID.indexOf('\:') != -1)
+                event.create(organID).maxStackSize(StackSize).group('chestcavity:organs')
+            else
+                event.create(`kubejscavity:${organID}`).maxStackSize(StackSize).group('chestcavity:organs')
         }
         else
         {
-            event.create(`kubejscavity:${organID}`).maxStackSize(StackSize == null ? 1 : StackSize).group('chestcavity:organs')
+            if(organID.indexOf('\:') != -1)
+                event.create(organID).maxStackSize(StackSize).group('chestcavity:organs').displayName(organName)
+            else
+                event.create(`kubejscavity:${organID}`).maxStackSize(StackSize).group('chestcavity:organs').displayName(organName)
         }
     }
     //Create kubejs Organs here
