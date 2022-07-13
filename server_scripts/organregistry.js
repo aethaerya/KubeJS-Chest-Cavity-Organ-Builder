@@ -35,7 +35,7 @@ onEvent('server.datapack.high_priority', event => {
         }
         modid = organ.itemID.split('\:')[0]
         item = organ.itemID.split('\:')[1]
-        event.addJson(`chestcavity:organs/kubejs/kubejscavity/${item}.json`, organ)
+        event.addJson(`chestcavity:organs/kubejs/${modid}/${item}.json`, organ)
     }
 
     //Register your organs here!
