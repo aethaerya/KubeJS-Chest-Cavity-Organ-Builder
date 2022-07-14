@@ -7,13 +7,10 @@ function Organ(itemID) {
 
 Organ.prototype = {
     addScore: function(score, value) {
-        if(score.indexOf('\:') != -1){
-            this.organScores.push({'id': score, 'value': value});
-        }
+        if(score.indexOf('\:') != -1)
+            this.organScores.push({'id': score, 'value': value})
         else
-        {
-            this.organScores.push({'id': `chestcavity:${score}`, 'value': value});
-        }
+            this.organScores.push({'id': `chestcavity:${score}`, 'value': value})
         return this;
     },
 
@@ -35,25 +32,19 @@ onEvent('server.datapack.high_priority', event => {
         }
         modid = organ.itemID.split('\:')[0]
         item = organ.itemID.split('\:')[1]
-        event.addJson(`chestcavity:organs/kubejs/kubejscavity/${item}.json`, organ)
+        event.addJson(`chestcavity:organs/kubejs/${modid}/${item}.json`, organ)
     }
 
     //Register your organs here!
     //Refer to https://github.com/Tigereye504/chestcavity/blob/master/src/main/java/net/tigereye/chestcavity/registration/CCOrganScores.java
     //for valid Organ Scores
 
-    /*
-    registerOrgan(new Organ('minecraft:beetroot').addScore('health', 10).addScore('speed', 10).build()) //example.
-    registerOrgan(new Organ('kubejs:someorgan').addScore('health', 2).addScore('speed', 20).pseudo().build()) //pseudo organ example for kubejs item
+    //For explanations on certain things, please check out organregistry_readme.md
 
-    //can also build them like this
-    registerOrgan(new Organ('minecraft:reetboot')
-        .addScore('health', 10)
-        .addScore('speed', 10)
-        .build()
-    )
-    */
-    registerOrgan(new Organ('kubejscavity:creative_soul')
+    //thank you for A5TR0spud for allowing me to use his mod's spritework for these examplary organs! 
+    //check out his mod and its github: https://www.curseforge.com/minecraft/mc-mods/ccastroadds https://github.com/A5TR0spud/chest-cavity-astro-adds
+
+    registerOrgan(new Organ('creative_soul')
         .addScore('filtration',2)
         .addScore('breath_recovery',2)
         .addScore('nutrition',4)
@@ -80,7 +71,6 @@ onEvent('server.datapack.high_priority', event => {
     registerOrgan(new Organ('gem_holster').addScore('luck',1.25).addScore('buoyant',-0.25).addScore('speed',-0.25).build())
     registerOrgan(new Organ('golden_wiring').addScore('nerves',2).build())
     registerOrgan(new Organ('hasty_muscle').addScore('speed',1.25).addScore('strength',0.25).addScore('nerves',0.5).build())
-    registerOrgan(new Organ('heart_of_gold').addScore('health',0.5).addScore('luck',0.5).addScore('defense',0.5).addScore('strength',-1).build())
     registerOrgan(new Organ('heart_of_gold').addScore('health',0.5).addScore('luck',0.5).addScore('defense',0.5).addScore('strength',-1).build())
     registerOrgan(new Organ('iron_lung').addScore('breath_recovery',0.75).addScore('breath_capacity',0.75).addScore('endurance',1.25).build())
     registerOrgan(new Organ('jump_shaft').addScore('speed',1.25).addScore('strength',0.25).addScore('impact_resistant',0.75).addScore('leaping',0.5).build())

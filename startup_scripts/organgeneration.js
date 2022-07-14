@@ -1,22 +1,32 @@
 onEvent('item.registry', event => {
-    function createOrgan(organID,StackSize){
+    function createOrgan(organID,StackSize,organName){
         //StackSize ?? 1
-        if(organID.indexOf('\:') != -1)
-        {   
-            event.create(organID).maxStackSize(StackSize == null ? 1 : StackSize).group('chestcavity:organs')
+        if(StackSite == null) 
+            StackSize = 1
+        if(organName == null)
+        {
+            if(organID.indexOf('\:') != -1)
+                event.create(organID).maxStackSize(StackSize).group('chestcavity:organs')
+            else
+                event.create(`kubejscavity:${organID}`).maxStackSize(StackSize).group('chestcavity:organs')
         }
         else
         {
-            event.create(`kubejscavity:${organID}`).maxStackSize(StackSize == null ? 1 : StackSize).group('chestcavity:organs')
+            if(organID.indexOf('\:') != -1)
+                event.create(organID).maxStackSize(StackSize).group('chestcavity:organs').displayName(organName)
+            else
+                event.create(`kubejscavity:${organID}`).maxStackSize(StackSize).group('chestcavity:organs').displayName(organName)
         }
     }
     //Create kubejs Organs here
-    //enter Id of the item and stack size of the item to get a custom item nested inside kubejscavity namespace. 
+    //Enter ID of the item and stacksize(optional, if not written it will default to 1) of the item to get a custom item nested inside kubejscavity namespace. 
+    //Enter Full ID of the item and stacksize(optional, if not written it will default to 1) of the item to get a custom item nested inside the appropriate namespace.
     //This DOES NOT make these items into organs automatically, so go to server_scripts to add them to be organs!
+    //You also need to put the item textures under the appropriate namespace, defaulted into assets/kubejscavity/textures/item. change kubejscavity with the appropriate namespace.
     
     //thank you for A5TR0spud for allowing me to use his mod's spritework for these examplary organs! 
     //check out his mod and its github: https://www.curseforge.com/minecraft/mc-mods/ccastroadds https://github.com/A5TR0spud/chest-cavity-astro-adds
-    //createOrgan('clockwork_heart',1)
+    
     createOrgan('creative_soul')
     createOrgan('actuator',16)
     createOrgan('copper_wiring',4)
