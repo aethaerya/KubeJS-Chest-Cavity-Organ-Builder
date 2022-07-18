@@ -28,7 +28,6 @@ onEvent('item.registry', event => {
         .group('chestcavity:organs')
         .maxStackSize(organ.stackSize)
         .displayName(organ.displayName)
-        .build()
     }
 
     //Create KubeJS Organs here
