@@ -13,7 +13,7 @@ KubeOrgan.prototype = {
     },
 
     displayName: function(name) {
-        this.displayName(name)
+        this.displayName = name
         return this
     },
 
