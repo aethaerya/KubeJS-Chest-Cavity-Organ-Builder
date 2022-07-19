@@ -6,7 +6,7 @@ function KubeOrgan(organID) {
     // If a modid separated by a ':' is not found in string organID, default to organID, else, get string after ':'
 }
 
-KubeOrgan.prototype() = {
+KubeOrgan.prototype = {
     stackSize: function(size) {
         this.stackSize = size
         return this
