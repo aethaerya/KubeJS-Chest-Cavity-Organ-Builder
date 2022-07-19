@@ -24,7 +24,7 @@ KubeOrgan.prototype() = {
 
 onEvent('item.registry', event => {
     function createOrgan(organ) {
-        event.create(`${organ.modid}:${organ.itemID}`)
+        event.create(`${organ.itemID}`)
         .group('chestcavity:organs')
         .maxStackSize(organ.stackSize)
         .displayName(organ.displayName)
