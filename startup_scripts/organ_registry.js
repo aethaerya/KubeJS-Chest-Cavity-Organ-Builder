@@ -1,8 +1,11 @@
+//This file is the base for a future script integrating registry with score assignment. As it is right now, it is redundant code with minor changes in calling
+//standard KubeJS code
+
 function KubeOrgan(organID) {
     this.itemID = organID.indexOf(':') == -1 ? `kubejscavity:${organID}` : organID // Sets default itemID
     // If an modID separated by a ':' is not found in string organID, default to kubejscavity, else, keep organID
     this.stackSize = 1
-    this.displayName = organID.indexOf(':') == -1 ? organID : organID.split(':')[1] // Sets default displayName
+    //this.displayName = organID.indexOf(':') == -1 ? organID : organID.split(':')[1] // Sets default displayName
     // If a modid separated by a ':' is not found in string organID, default to organID, else, get string after ':'
 }
 
@@ -27,7 +30,8 @@ onEvent('item.registry', event => {
         event.create(`${organ.itemID}`)
         .group('chestcavity:organs')
         .maxStackSize(organ.stackSize)
-        .displayName(organ.displayName)
+        //.displayName(organ.displayName)
+        .build()
     }
 
     //Create KubeJS Organs here
